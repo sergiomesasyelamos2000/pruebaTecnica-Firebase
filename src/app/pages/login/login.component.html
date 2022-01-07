@@ -1,0 +1,63 @@
+<div class="modal-dialog login animated fadeInLeft">
+  <div class="main-section">
+    <div class="border-0 modal-content">
+      <div class="col-12 user-img text-center">
+        <img
+          src="https://asociaciondrupal.es/sites/default/files/partners/180725_Hiberus_Tecnolog%C3%ADa_Horizontal_Azul.png"
+          alt="Hiberus"
+        />
+      </div>
+
+<!--       <h1>Iniciar sesión</h1>
+ -->
+      <form
+        (ngSubmit)="login(loginForm)"
+        #loginForm="ngForm"
+        class="formulario"
+        id="formulario"
+        method="post"
+      >
+        <span
+          *ngIf="loginForm.submitted && loginForm.controls['email'].errors"
+          class="text-danger animated fadeIn"
+          > <b>El correo es obligatorio</b></span
+        >
+
+        <div class="form-group" id="email-group">
+          <input
+            class="form-control"
+            type="email"
+            [(ngModel)]="usuario.email"
+            name="email"
+            placeholder="Email"
+            required
+            email
+          />
+        </div>
+
+        <span
+          *ngIf="loginForm.submitted && loginForm.controls['password'].errors"
+          class="text-danger animated fadeIn"
+          ><b>Al menos 6 caracteres</b></span
+        >
+        <div class="form-group" id="password-group">
+          <input
+            class="form-control"
+            type="password"
+            [(ngModel)]="usuario.password"
+            minlength="6"
+            name="password"
+            placeholder="Contraseña"
+            required
+          />
+        </div>
+        <div>
+          <a [routerLink]="['/registro']"> ¿No tienes cuenta? </a>
+        </div>
+        <button type="submit" class="btn float-end" id="sign" name="continuar">
+          Iniciar sesión
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

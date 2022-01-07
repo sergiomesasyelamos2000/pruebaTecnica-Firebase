@@ -1,0 +1,68 @@
+<app-navbar></app-navbar>
+<div class="m-5">
+  <h1>Listado de Usuarios</h1>
+<hr>
+  <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+    <button routerLink="/usuario/nuevo" class="btn btn-danger float-right"><i class="fa fa-plus"></i>Agregar usuario</button>
+  </div>
+
+<div class="table-responsive">
+<table *ngIf="!cargando && usuarios.length > 0" 
+  class="table mt-3 fadeIn faster">
+  <thead class="table-dark">
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Apellidos</th>
+      <th scope="col">Email</th>
+      <th scope="col">Herramientas</th>
+    </tr>
+  </thead>
+  <tbody text-align="center">
+    <tr *ngFor="let usuario of usuarios; let i = index">
+      <th scope="row">{{i + 1}}</th>
+      <td>{{usuario.name}}</td>
+      <td>{{usuario.surname}}</td>
+      <td>{{usuario.email}}</td>
+      <td>
+
+        <button class="btn btn-info me-1"
+                [routerLink]="['/usuario', usuario.id]">
+          <i class="fa fa-pen" sytle="color:white;"></i>
+        </button>
+
+        <button class="btn btn-danger me-1"
+                (click)="borrarUsuario (usuario, i )">
+          <i class="fa fa-trash"></i>
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div *ngIf="!cargando && usuarios.length === 0"
+class="alert alert-warning text-center mt-3">
+  <h4 class="alert-heading">No hay usuarios en la base de datos</h4>
+  <p>
+    <i class="fa fa-exclamation fa-2x"></i>
+  </p>
+</div>
+
+
+<div *ngIf="cargando" 
+  class="alert alert-info text-center mt-3">
+  <h4 class="alert-heading">Cargando...</h4>
+  <p>
+    <i class="fa fa-sync-alt fa-spin fa-2x"></i>
+  </p>
+
+  <p class="mb-0">
+    Espere por favor...
+  </p>
+</div>
+
+
+
+
+</div>

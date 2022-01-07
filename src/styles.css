@@ -1,0 +1,124 @@
+
+.form-firebase input {
+  height: 42px;
+  font-size: 18px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+.fa-sign-out-alt{
+  float: right;
+}
+
+.fa-pen, .fa-sign-out-alt{
+  color: white;
+}
+
+.icono i{
+  font-size: 25px;
+}
+/********** Login **********/
+body {
+  background-repeat: no repeat;
+  background-size: cover;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  padding-bottom: 50px;
+}
+
+.main-section {
+  margin-top: 10%;
+  border-radius: 5px;
+}
+
+.modal-content {
+  height: 100%;
+  opacity: 0.95;
+  padding: 0 20px;
+}
+
+.user-img {
+  margin-top: 25px;
+  margin-bottom: 10px;
+}
+.user-img img{
+  max-width: 100%;
+  height: auto;
+}
+.form-group input {
+  height: 42px;
+  font-size: 18px;
+  padding-left: 40px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+.form-group::before {
+  position: absolute;
+  left: 28px;
+  font-size: 22px;
+  padding-top: 4px;
+}
+.form-group#email-group::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f0e0";
+}
+.form-group#user-group::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f007";
+}
+.form-group#password-group::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f023";
+}
+a {
+  color: #3754A2;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+.link {
+  padding-left: 3px;
+}
+
+@media (max-width: 520px) {
+  .back-btn,
+  .btn-primary {
+    width: 40vw;
+    padding: 10px 5px;
+    margin-top: 20px;
+  }
+}
+#user-group {
+  margin-top: 8px;
+}
+
+#password-group {
+  margin-top: 13px;
+  margin-bottom: 10px;
+}
+.back-btn {
+  background-color: #ddd;
+}
+
+.back-btn:hover {
+  background-color: #bbb;
+}
+.formulario button {
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  border: none;
+  font-size: 0.875rem;
+  color: #ffffff;
+  font-weight: bold;
+  background-color: #3754A2;
+  width: 100%;
+  display: block;
+  padding: 0.875rem 1rem;
+  border-radius: 1.5rem;
+  cursor: pointer;
+  margin: 25px 0 20px;
+}

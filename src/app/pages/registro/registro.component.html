@@ -1,0 +1,99 @@
+<div class="modal-dialog login animated fadeInLeft">
+  <div class="main-section">
+    <div class="border-0 modal-content">
+      <div class="col-12 user-img text-center">
+        <img
+          src="https://asociaciondrupal.es/sites/default/files/partners/180725_Hiberus_Tecnolog%C3%ADa_Horizontal_Azul.png"
+          alt="Hiberus"
+        />
+      </div>
+
+<!--       <h1>Registrarse</h1>
+ -->      <form
+        (ngSubmit)="onSubmit(registroForm)"
+        #registroForm="ngForm"
+        class="formulario"
+        id="formulario"
+        method="post"
+      >
+        <span
+          *ngIf="
+            registroForm.submitted && registroForm.controls['email'].errors
+          "
+          class="text-danger animated fadeIn"
+          ><b>El correo es obligatorio</b></span
+        >
+        <div class="form-group" id="email-group">
+          <input
+            class="form-control"
+            type="email"
+            [(ngModel)]="usuario.email"
+            name="email"
+            placeholder="Email"
+            required
+            email
+          />
+        </div>
+        <span
+          *ngIf="
+            registroForm.submitted && registroForm.controls['password'].errors
+          "
+          class="text-danger animated fadeIn"
+          ><b>Al menos 6 caracteres</b></span
+        >
+        <div class="form-group" id="password-group">
+          <input
+            class="form-control"
+            type="password"
+            [(ngModel)]="usuario.password"
+            minlength="6"
+            name="password"
+            placeholder="Contraseña"
+            required
+          />
+        </div>
+        <span
+          *ngIf="registroForm.submitted && registroForm.controls['name'].errors"
+          class="text-danger animated fadeIn"
+          ><b>El nombre es obligatorio</b></span
+        >
+        <div class="form-group" id="user-group">
+          <input
+            class="form-control"
+            type="text"
+            [(ngModel)]="usuario.name"
+            minlength="2"
+            name="name"
+            placeholder="Nombre"
+            required
+          />
+        </div>
+        <span
+          *ngIf="
+            registroForm.submitted && registroForm.controls['surname'].errors
+          "
+          class="text-danger animated fadeIn"
+          ><b>El apellido es obligatorio</b></span
+        >
+        <div class="form-group" id="user-group">
+          <input
+            class="form-control"
+            type="text"
+            [(ngModel)]="usuario.surname"
+            minlength="2"
+            name="surname"
+            placeholder="Apellidos"
+            required
+          />
+        </div>
+        <div>
+          <a [routerLink]="['/login']"> ¿Ya tienes una cuenta? / Ingresar </a>
+        </div>
+
+        <button type="submit" class="btn float-end" name="Registrarse">
+          Registrarse
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
